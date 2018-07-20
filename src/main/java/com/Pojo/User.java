@@ -1,5 +1,7 @@
 package com.Pojo;
 
+import java.util.Random;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,6 +12,7 @@ public class User {
     private int id;
     private String account;
     private String password;
+    private int age;
 
     public User(int id, String account, String password) {
         this.id = id;
@@ -19,6 +22,8 @@ public class User {
 
     public User() {
         super();
+        Random r = new Random();
+        age=r.nextInt(100);
     }
 
     public int getId() {
@@ -43,6 +48,12 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public int getAge() {
+    	return age;
+    }
+    public void setAge(int age) {
+    	this.age = age;
     }
 
     @Override

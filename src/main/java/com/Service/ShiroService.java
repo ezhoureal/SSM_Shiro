@@ -5,9 +5,6 @@ import com.Pojo.User;
 
 import java.util.List;
 
-/**
- * Created by Administrator on 2017/10/10.
- */
 public interface ShiroService {
 
     /**
@@ -24,4 +21,29 @@ public interface ShiroService {
      * @return List
      */
     List<Permission> getPermissionsByUser(User user);
+    /**
+     * 根据id获得账户
+     * @param userId
+     * @return
+     */
+    User getUserById(int userId);
+    /**
+     * 添加账号
+     * @param name
+     * @param password
+     * @param role
+     * @throws Exception
+     */
+	void insert(String name, String password, String role) throws Exception;
+	/**
+	 * 添加用户的角色信息
+	 * @param userId
+	 * @param roleId
+	 */
+	void insertRole(int userId, int roleId);
+	/**
+	 * 获得所有用户
+	 * @return
+	 */
+	List<User> getAllUsers();
 }
